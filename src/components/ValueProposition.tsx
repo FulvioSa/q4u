@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Clock, MapPin, Star, TrendingUp, Gift, Users } from 'lucide-react';
 
 export default function ValueProposition() {
@@ -79,9 +80,41 @@ export default function ValueProposition() {
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">⏱ {feature.title}</h3>
                   <p className="text-gray-600 mb-4">{feature.description}</p>
-                  <div className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${colors[2]} ${colors[3]} ${colors[4]} border`}>
+                  <div className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${colors[2]} ${colors[3]} ${colors[4]} border mb-4`}>
                     {feature.benefit}
                   </div>
+                  {feature.title === "Attesa a tempo" && (
+                    <Link to="/booking" className={`text-sm font-medium ${colors[3]} hover:underline inline-flex items-center`}>
+                      Prenota ora
+                      <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                      </svg>
+                    </Link>
+                  )}
+                  {feature.title === "Tracker & ETA" && (
+                    <Link to="/tracking" className={`text-sm font-medium ${colors[3]} hover:underline inline-flex items-center`}>
+                      Traccia in tempo reale
+                      <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                      </svg>
+                    </Link>
+                  )}
+                  {feature.title === "Comfort kit extra" && (
+                    <Link to="/booking" className={`text-sm font-medium ${colors[3]} hover:underline inline-flex items-center`}>
+                      Aggiungi al tuo ordine
+                      <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                      </svg>
+                    </Link>
+                  )}
+                  {feature.title === "Queuer verificati" && (
+                    <Link to="/become-queuer" className={`text-sm font-medium ${colors[3]} hover:underline inline-flex items-center`}>
+                      Diventa Queuer
+                      <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                      </svg>
+                    </Link>
+                  )}
                 </div>
               </div>
             );

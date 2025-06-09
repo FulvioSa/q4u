@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Check, Zap, Crown } from 'lucide-react';
 
 export default function Pricing() {
@@ -107,13 +108,16 @@ export default function Pricing() {
                 ))}
               </div>
 
-              <button className={`w-full py-3 px-6 rounded-full font-semibold transition-all duration-200 ${
-                plan.popular 
-                  ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white hover:shadow-lg transform hover:-translate-y-0.5'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-              }`}>
+              <Link 
+                to="/booking" 
+                className={`block text-center w-full py-3 px-6 rounded-full font-semibold transition-all duration-200 ${
+                  plan.popular 
+                    ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white hover:shadow-lg transform hover:-translate-y-0.5'
+                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                }`}
+              >
                 {plan.popular ? 'Inizia ora' : 'Scegli piano'}
-              </button>
+              </Link>
             </div>
           ))}
         </div>

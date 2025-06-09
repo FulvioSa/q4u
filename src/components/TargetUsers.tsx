@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Briefcase, Heart, ShoppingBag, Camera, Building2 } from 'lucide-react';
 
 export default function TargetUsers() {
@@ -64,10 +65,50 @@ export default function TargetUsers() {
                 <div className="flex-1 text-center lg:text-left">
                   <h3 className="text-xl font-bold text-gray-900 mb-2">{user.title}</h3>
                   <p className="text-gray-600 mb-4">{user.description}</p>
-                  <blockquote className="bg-gray-50 p-4 rounded-lg border-l-4 border-blue-500">
+                  <blockquote className="bg-gray-50 p-4 rounded-lg border-l-4 border-blue-500 mb-4">
                     <p className="text-gray-700 italic mb-2">"{user.quote}"</p>
                     <cite className="text-sm text-gray-500">— {user.author}</cite>
                   </blockquote>
+                  {user.title === "Professionisti sempre in corsa" && (
+                    <Link to="/booking" className="text-blue-600 font-medium hover:text-blue-800 transition-colors inline-flex items-center">
+                      Prenota per risparmiare tempo
+                      <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                      </svg>
+                    </Link>
+                  )}
+                  {user.title === "Anziani o persone con difficoltà motorie" && (
+                    <Link to="/booking" className="text-purple-600 font-medium hover:text-purple-800 transition-colors inline-flex items-center">
+                      Servizio assistito
+                      <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                      </svg>
+                    </Link>
+                  )}
+                  {user.title === "Sneakerhead e fan di eventi" && (
+                    <Link to="/booking" className="text-indigo-600 font-medium hover:text-indigo-800 transition-colors inline-flex items-center">
+                      Prenota per eventi esclusivi
+                      <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                      </svg>
+                    </Link>
+                  )}
+                  {user.title === "Turisti che non vogliono perdere tempo" && (
+                    <Link to="/beta-milano" className="text-green-600 font-medium hover:text-green-800 transition-colors inline-flex items-center">
+                      Unisciti alla beta su Milano
+                      <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                      </svg>
+                    </Link>
+                  )}
+                  {user.title === "Agenzie, click & collect e PA" && (
+                    <Link to="/booking" className="text-orange-600 font-medium hover:text-orange-800 transition-colors inline-flex items-center">
+                      Soluzioni business
+                      <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                      </svg>
+                    </Link>
+                  )}
                 </div>
               </div>
             </div>

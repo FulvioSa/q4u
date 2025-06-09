@@ -1,50 +1,135 @@
-import React from 'react';
-import { MapPin, Menu, X } from 'lucide-react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Menu, X } from 'lucide-react';
 
 export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-100 z-50">
+    <header className="fixed w-full bg-white shadow-sm z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <div className="flex items-center space-x-2">
-            <div className="bg-gradient-to-br from-blue-600 to-purple-600 p-2 rounded-lg">
-              <span className="text-white font-bold text-xl">Q4U</span>
-            </div>
+        <div className="flex justify-between items-center py-4 md:justify-start md:space-x-10">
+          <div className="flex justify-start lg:w-0 lg:flex-1">
+            <Link to="/">
+              <span className="sr-only">Q4U</span>
+              <img
+                className="h-8 w-auto sm:h-10"
+                src="/logo.svg"
+                alt="Q4U Logo"
+              />
+            </Link>
           </div>
-          
-          <nav className="hidden md:flex items-center space-x-8">
-            <a href="#come-funziona" className="text-gray-700 hover:text-blue-600 transition-colors">Come funziona</a>
-            <a href="#prezzi" className="text-gray-700 hover:text-blue-600 transition-colors">Prezzi</a>
-            <a href="#queuer" className="text-gray-700 hover:text-blue-600 transition-colors">Diventa queuer</a>
-            <div className="flex items-center space-x-2 text-sm text-gray-600">
-              <MapPin className="w-4 h-4" />
-              <span>Milano</span>
-            </div>
-            <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200">
-              Prenota ora
+          <div className="-mr-2 -my-2 md:hidden">
+            <button
+              type="button"
+              className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+              onClick={() => setIsMenuOpen(true)}
+            >
+              <span className="sr-only">Open menu</span>
+              <Menu className="h-6 w-6" aria-hidden="true" />
             </button>
+          </div>
+          <nav className="hidden md:flex space-x-10">
+            <Link to="/demo" className="text-base font-medium text-gray-500 hover:text-gray-900">
+              Come funziona
+            </Link>
+            <a href="#services" className="text-base font-medium text-gray-500 hover:text-gray-900">
+              Servizi
+            </a>
+            <a href="#pricing" className="text-base font-medium text-gray-500 hover:text-gray-900">
+              Prezzi
+            </a>
+            <Link to="/become-queuer" className="text-base font-medium text-gray-500 hover:text-gray-900">
+              Per i Queuer
+            </Link>
           </nav>
-
-          <button 
-            className="md:hidden"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
-        </div>
-
-        {isMenuOpen && (
-          <div className="md:hidden py-4 space-y-4 border-t border-gray-100">
-            <a href="#come-funziona" className="block text-gray-700 hover:text-blue-600">Come funziona</a>
-            <a href="#prezzi" className="block text-gray-700 hover:text-blue-600">Prezzi</a>
-            <a href="#queuer" className="block text-gray-700 hover:text-blue-600">Diventa queuer</a>
-            <button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-2 rounded-full">
+          <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
+            <Link
+              to="/booking"
+              className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700"
+            >
               Prenota ora
-            </button>
+            </Link>
           </div>
-        )}
+        </div>
+      </div>
+
+      {/* Mobile menu, show/hide based on mobile menu state */}
+      <div
+        className={`${isMenuOpen ? 'block' : 'hidden'} md:hidden absolute top-0 inset-x-0 p-2 transition transform origin-top-right`}
+      >
+        <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
+          <div className="pt-5 pb-6 px-5">
+            <div className="flex items-center justify-between">
+              <div>
+                <img
+                  className="h-8 w-auto"
+                  src="/logo.svg"
+                  alt="Q4U Logo"
+                />
+              </div>
+              <div className="-mr-2">
+                <button
+                  type="button"
+                  className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <span className="sr-only">Close menu</span>
+                  <X className="h-6 w-6" aria-hidden="true" />
+                </button>
+              </div>
+            </div>
+            <div className="mt-6">
+              <nav className="grid gap-y-8">
+                <Link
+                  to="/demo"
+                  className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <span className="ml-3 text-base font-medium text-gray-900">
+                    Come funziona
+                  </span>
+                </Link>
+                <a
+                  href="#services"
+                  className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <span className="ml-3 text-base font-medium text-gray-900">
+                    Servizi
+                  </span>
+                </a>
+                <a
+                  href="#pricing"
+                  className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <span className="ml-3 text-base font-medium text-gray-900">
+                    Prezzi
+                  </span>
+                </a>
+                <Link
+                  to="/become-queuer"
+                  className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <span className="ml-3 text-base font-medium text-gray-900">
+                    Per i Queuer
+                  </span>
+                </Link>
+              </nav>
+            </div>
+          </div>
+          <div className="py-6 px-5 space-y-6">
+            <Link
+              to="/booking"
+              className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Prenota ora
+            </Link>
+          </div>
+        </div>
       </div>
     </header>
   );

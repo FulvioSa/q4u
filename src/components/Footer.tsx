@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { MapPin, Mail, Phone, Instagram, Twitter, Linkedin } from 'lucide-react';
 
 export default function Footer() {
@@ -31,20 +32,20 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold text-lg mb-4">Servizi</h3>
             <ul className="space-y-2 text-gray-400">
-              <li><a href="#" className="hover:text-white transition-colors">Come funziona</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Prezzi</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">FAQ</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Supporto</a></li>
+              <li><Link to="/#come-funziona" className="hover:text-white transition-colors">Come funziona</Link></li>
+              <li><Link to="/#prezzi" className="hover:text-white transition-colors">Prezzi</Link></li>
+              <li><Link to="/demo" className="hover:text-white transition-colors">Demo</Link></li>
+              <li><Link to="/booking" className="hover:text-white transition-colors">Prenota</Link></li>
             </ul>
           </div>
 
           <div>
             <h3 className="font-semibold text-lg mb-4">Per i Queuer</h3>
             <ul className="space-y-2 text-gray-400">
-              <li><a href="#" className="hover:text-white transition-colors">Candidati</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Formazione</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Guadagni</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Comunità</a></li>
+              <li><Link to="/become-queuer" className="hover:text-white transition-colors">Candidati</Link></li>
+              <li><Link to="/become-queuer" className="hover:text-white transition-colors">Formazione</Link></li>
+              <li><Link to="/become-queuer" className="hover:text-white transition-colors">Guadagni</Link></li>
+              <li><Link to="/beta-milano" className="hover:text-white transition-colors">Beta Milano</Link></li>
             </ul>
           </div>
 
@@ -73,9 +74,9 @@ export default function Footer() {
               © 2024 Q4U. Tutti i diritti riservati.
             </p>
             <div className="flex space-x-6 text-sm text-gray-400 mt-4 md:mt-0">
-              <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-white transition-colors">Termini di Servizio</a>
-              <a href="#" className="hover:text-white transition-colors">Cookie Policy</a>
+              <Link to="/" className="hover:text-white transition-colors">Privacy Policy</Link>
+              <Link to="/" className="hover:text-white transition-colors">Termini di Servizio</Link>
+              <Link to="/" className="hover:text-white transition-colors">Cookie Policy</Link>
             </div>
           </div>
         </div>
