@@ -6,13 +6,13 @@ import Footer from '../components/Footer';
 
 export default function QueuerSuccess() {
   return (
-    <div className="min-h-screen bg-white flex flex-col">
+    <div className="min-h-screen bg-gray-50 flex flex-col">
       <Header />
       <main className="flex-grow pt-24 pb-16">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
+          <div className="bg-gray-100 rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
             <div className="bg-gradient-to-r from-purple-600 to-blue-600 px-6 py-12 text-white text-center">
-              <div className="inline-flex items-center justify-center w-20 h-20 bg-white rounded-full mb-6">
+              <div className="inline-flex items-center justify-center w-20 h-20 bg-gray-50 rounded-full mb-6">
                 <CheckCircle className="w-12 h-12 text-purple-600" />
               </div>
               <h1 className="text-3xl font-bold mb-2">Candidatura inviata con successo!</h1>
@@ -95,7 +95,7 @@ export default function QueuerSuccess() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link to="/" className="px-6 py-3 bg-white border border-gray-300 text-gray-700 rounded-full hover:bg-gray-50 transition-colors text-center">
+                <Link to="/" className="px-6 py-3 bg-gray-200 border border-gray-300 text-gray-700 rounded-full hover:bg-gray-300 transition-colors text-center">
                   Torna alla home
                 </Link>
                 <a href="mailto:support@q4u.it" className="px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full hover:shadow-lg transition-all text-center inline-flex items-center justify-center">

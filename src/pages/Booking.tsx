@@ -48,7 +48,7 @@ export default function Booking() {
   ];
 
   return (
-    <div className="min-h-screen bg-white flex flex-col">
+    <div className="min-h-screen bg-gray-50 flex flex-col">
       <Header />
       <main className="flex-grow pt-24 pb-16">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -59,7 +59,7 @@ export default function Booking() {
             </Link>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
+          <div className="bg-gray-100 rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
             {/* Progress bar */}
             <div className="bg-gray-50 px-6 py-4">
               <div className="flex items-center justify-between mb-2">

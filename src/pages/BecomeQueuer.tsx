@@ -62,7 +62,7 @@ export default function BecomeQueuer() {
   };
 
   return (
-    <div className="min-h-screen bg-white flex flex-col">
+    <div className="min-h-screen bg-gray-50 flex flex-col">
       <Header />
       <main className="flex-grow pt-24 pb-16">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -73,7 +73,7 @@ export default function BecomeQueuer() {
             </Link>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
+          <div className="bg-gray-100 rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
             {/* Progress bar */}
             <div className="bg-gradient-to-r from-purple-600 to-blue-600 px-6 py-6 text-white">
               <h1 className="text-2xl font-bold mb-2">Diventa Queuer</h1>

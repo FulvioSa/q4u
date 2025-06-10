@@ -46,7 +46,7 @@ export default function Tracking() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white flex flex-col">
+    <div className="min-h-screen bg-gray-50 flex flex-col">
       <Header />
       <main className="flex-grow pt-24 pb-16">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -57,7 +57,7 @@ export default function Tracking() {
             </Link>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden mb-8">
+          <div className="bg-gray-100 rounded-2xl shadow-xl border border-gray-100 overflow-hidden mb-8">
             <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-6 text-white">
               <h1 className="text-2xl font-bold mb-2">Tracciamento in tempo reale</h1>
               <p>Il tuo queuer è in attesa per te</p>

@@ -56,7 +56,7 @@ export default function BetaMilano() {
   ];
 
   return (
-    <div className="min-h-screen bg-white flex flex-col">
+    <div className="min-h-screen bg-gray-50 flex flex-col">
       <Header />
       <main className="flex-grow pt-24 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -68,7 +68,7 @@ export default function BetaMilano() {
           </div>
 
           {formSubmitted ? (
-            <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
+            <div className="bg-gray-100 rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
               <div className="bg-gradient-to-r from-purple-600 to-blue-600 px-6 py-12 text-white text-center">
                 <div className="inline-flex items-center justify-center w-20 h-20 bg-white rounded-full mb-6">
                   <CheckCircle className="w-12 h-12 text-purple-600" />
@@ -99,7 +99,7 @@ export default function BetaMilano() {
                       Stiamo per lanciare Q4U a Milano, partendo dalle zone centrali e più frequentate.
                       Gli utenti beta avranno accesso prioritario e sconti esclusivi.
                     </p>
-                    <div className="bg-white rounded-lg p-3">
+                    <div className="bg-gray-200 rounded-lg p-3">
                       <h3 className="font-medium text-gray-900 mb-2">Zone iniziali di copertura:</h3>
                       <div className="flex flex-wrap gap-2">
                         {milanZones.slice(0, 5).map(zone => (
@@ -177,7 +177,7 @@ export default function BetaMilano() {
               </div>
             </div>
           ) : (
-            <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
+            <div className="bg-gray-100 rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
               <div className="bg-gradient-to-r from-purple-600 to-blue-600 px-6 py-8 text-white">
                 <h1 className="text-2xl font-bold mb-2">Unisciti alla beta di Q4U Milano</h1>
                 <p className="opacity-90">Sii tra i primi a provare il nostro servizio di code management nella tua città</p>

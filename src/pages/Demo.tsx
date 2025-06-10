@@ -97,7 +97,7 @@ export default function Demo() {
             </Link>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden mb-8">
+          <div className="bg-gray-100 rounded-2xl shadow-xl border border-gray-100 overflow-hidden mb-8">
             <div className="bg-gradient-to-r from-purple-600 to-blue-600 px-6 py-6 text-white">
               <h1 className="text-2xl font-bold mb-2">Demo interattiva</h1>
               <p>Scopri come funziona Q4U in pochi semplici passi</p>
@@ -206,7 +206,7 @@ export default function Demo() {
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
+          <div className="bg-gray-100 rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
             <div className="p-6">
               <h2 className="text-xl font-bold text-gray-900 mb-6">Domande frequenti</h2>
               
